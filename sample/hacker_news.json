@@ -1,0 +1,7 @@
+{
+  "title:`title text{}`": "string",
+  "article[]:`#hnmain > tbody > tr:nth-child(3) > td > table > tbody`": {
+    "title:`td.title a`": "string",
+    "link:`td.title a attr{href}`": "string"
+  }
+}
