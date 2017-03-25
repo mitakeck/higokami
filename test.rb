@@ -14,15 +14,23 @@ struct = JSON.parser.new(file).parse
 # end
 # doc = Nokogiri::HTML.parse(html, nil, charset)
 
+Key = Struct.new(:key, :is_array)
+
+def get_key(src)
+  case src
+  when /\[\](.*)/ then Key.new(Regexp.last_match[1], true)
+  else Key.new(src, false)
+  end
+end
+
 def serializer(struct)
   out = Hash.new
   struct.each do |key, value|
     p '-' * 30
+    is_array = false
+    tkey = ''
     if match = key.match(/(?<k1>([^:]*)):`(?<k2>([^`]*))`/)
-      if is_array = match[:k1].match(/\[\].*/)
-        p 'array key'
-      end
-      p match[:k1]
+      p get_key(match[:k1])
       p match[:k2]
     else
       raise InvalidSyntaxKey
@@ -43,3 +51,6 @@ def serializer(struct)
 end
 
 serializer(struct)
+
+p get_key('[]hoge')
+p get_key('aaa')
