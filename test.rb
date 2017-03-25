@@ -18,12 +18,11 @@ def serializer(struct)
   out = Hash.new
   struct.each do |key, value|
     p '-' * 30
-    tkey = ''
     if match = key.match(/(?<k1>([^:]*)):`(?<k2>([^`]*))`/)
       if is_array = match[:k1].match(/\[\].*/)
         p 'array key'
       end
-      tkey = match[:k1]
+      p match[:k1]
       p match[:k2]
     else
       raise InvalidSyntaxKey
