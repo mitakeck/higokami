@@ -24,14 +24,9 @@ class NodeParser
 
   def filter(token)
     case token
-    when 'text{}'
-      @filter = TextFilter.new
-    when 'href{}'
-      @filter = HrefFilter.new
-    when 'html{}'
-      @filter = HtmlFilter.new
-    when /attr{(.*)}/
-      @filter = AttrFilter.new($1)
+    when /.*{.*}/
+      filter = get_filter(token)
+      break
     else
       raise UndefinedFilter
     end

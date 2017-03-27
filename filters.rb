@@ -77,3 +77,20 @@ class ObjectFilter
     doc
   end
 end
+
+def get_filter(token)
+  filter =
+    case token
+    when 'text{}'
+      TextFilter.new
+    when 'href{}'
+      HrefFilter.new
+    when 'html{}'
+      HtmlFilter.new
+    when /attr{(.*)}/
+      AttrFilter.new(Regexp.last_match[1])
+    else
+      raise UndefinedFilter
+    end
+  filter
+end
