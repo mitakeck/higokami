@@ -1,5 +1,6 @@
 require 'json'
 require 'open-uri'
+require 'open_uri_redirections'
 require 'nokogiri'
 
 require './serializer.rb'
@@ -14,7 +15,7 @@ class Higokami
   # parse
   def parse(url)
     @charset = nil
-    @html = open(url) do |f|
+    @html = open(url, 'User-Agent' => 'Higokami/0.0.1', allow_redirections: :safe) do |f|
       @charset = f.charset
       f.read
     end
