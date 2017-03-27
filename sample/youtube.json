@@ -1,0 +1,4 @@
+{
+  "title:`#eow-title text{}`": "string",
+  "watch-count:`#watch7-views-info > div.watch-view-count text{}`": "string"
+}
