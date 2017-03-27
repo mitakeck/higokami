@@ -1,0 +1,6 @@
+{
+  "name:`#ebooksProductTitle text{}`": "string",
+  "star:`#acrPopover span.a-icon-alt text{}`": "string",
+  "price:`#buybox tr.kindle-price td.a-color-price text{}`": "string",
+  "point:`#buybox tr.loyalty-points td.a-color-price text{}`": "string"
+}
