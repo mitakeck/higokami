@@ -1,8 +1,8 @@
-require './higomori.rb'
+require './higokami.rb'
 
 # parse hacker news
-higomori = Higomori.new('sample/hacker_news.json')
-puts higomori.parse('https://news.ycombinator.com/')
+higokami = Higokami.new('sample/hacker_news.json')
+puts higokami.parse('https://news.ycombinator.com/')
 
 `
 $ ruby test.rb

@@ -4,8 +4,8 @@ require 'nokogiri'
 
 require './serializer.rb'
 
-# Higomori
-class Higomori
+# Higokami
+class Higokami
   def initialize(file_name)
     @file = File.read(file_name)
     @struct = JSON.parser.new(@file).parse
