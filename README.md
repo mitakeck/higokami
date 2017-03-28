@@ -1,10 +1,12 @@
-# higokami
+# Higokami
 Higokami : tinny html scraper depend on Nokogiri
 
 
 ## Usage
 
-```ruby:
+Let's scrape Hacker News with Higokami
+
+```ruby
 require './higokami.rb'
 
 # parse hacker news
@@ -12,7 +14,7 @@ higokami = Higokami.new('sample/news.ycombinator.com/index.json')
 puts higokami.parse('https://news.ycombinator.com/')
 ```
 
-```json:
+```json
 {
   "title": "Hacker News",
   "article": [
@@ -28,3 +30,5 @@ puts higokami.parse('https://news.ycombinator.com/')
   ]
 }
 ```
+
+more sample is [here](https://github.com/mitakeck/higokami/tree/master/sample).
