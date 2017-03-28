@@ -1,0 +1,6 @@
+{
+  "[]items:`div.popularItem`": {
+    "title:`a.popularItem_articleTitle_text text{}`": "string",
+    "url:`a.popularItem_articleTitle_text href{}`": "string"
+  }
+}
