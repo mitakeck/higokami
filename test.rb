@@ -1,7 +1,7 @@
 require './higokami.rb'
 
 # parse hacker news
-higokami = Higokami.new('sample/hacker_news.json')
+higokami = Higokami.new('sample/news.ycombinator.com/index.json')
 puts higokami.parse('https://news.ycombinator.com/')
 
 `
