@@ -11,7 +11,7 @@ Key = Struct.new(:key_org, :key, :is_array, :selector)
 def get_key(key)
   if (match = key.match(/(?<tkey>([^:]*)): ?`(?<selector>([^`]*))`/))
     case match[:tkey]
-    when /\[\](.*)/ then
+    when /(.*)\[\]/ then
       # this key has array value
       return Key.new(key, Regexp.last_match[1], true, match[:selector])
     else
