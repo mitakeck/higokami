@@ -1,5 +1,5 @@
 {
-  "[]site:`#rso > div:nth-child(2) > div > div`": {
+  "site[]:`#rso > div:nth-child(2) > div > div`": {
     "title:`a text{}`": "string",
     "url:`a href{}`": "string"
   }

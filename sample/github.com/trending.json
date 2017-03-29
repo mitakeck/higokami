@@ -1,6 +1,6 @@
 {
-  "[]repos:`ol.repo-list li`": {
+  "repos[]:`ol.repo-list li`": {
     "url:`div.d-inline-block.col-9.mb-1 h3 a href{}`": "string",
-    "description:`div.py-1 p text{}`": "string"
+    "description:`div.py-1 p text{} trim{}`": "string"
   }
 }

@@ -1,7 +1,7 @@
 {
   "title:`title text{}`": "string",
   "update:`#topicsfb em text{}`": "string",
-  "[]news:`#topicsfb ul.emphasis li a`": {
+  "news[]:`#topicsfb ul.emphasis li a`": {
     "title:`text{}`": "string",
     "url:`href{}`": "string"
   }

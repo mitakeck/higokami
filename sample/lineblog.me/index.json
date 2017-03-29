@@ -1,6 +1,6 @@
 {
   "title:`#main-inner > article > header > h1 > a text{}`": "string",
-  "[]img:`img.pict`": {
+  "img[]:`img.pict`": {
     "src:`attr{src}`": "string"
   }
 }
