@@ -1,14 +1,14 @@
 require './filters.rb'
 
 # convert return node value by key type
-def return_node(node, tkey, filter)
+def return_node(node, tkey, filters)
   # return single value
-  return filter.filter(node) unless tkey[:is_array]
+  return filters.reduce(node) { |value, filter| filter.filter(value) } unless tkey[:is_array]
 
   # return array value
   result = []
   node.each do |n|
-    result.push(filter.filter(n))
+    result.push(filters.reduce(n) { |value, filter| filter.filter(value) })
   end
 
   # return
@@ -29,19 +29,16 @@ Selector = Struct.new(:selector, :filter)
 # get css selector and filter function from user iuput
 def parse_selector(selector)
   selectors = []
-  filter = ObjectFilter.new
+  filters = [ObjectFilter.new]
   selector.split(' ').each do |token|
     case token
-    when /.*{.*}/
-      filter = get_filter(token)
-      break
-    else
-      selectors.push(token)
+    when /.*{.*}/ then filters.push(get_filter(token))
+    else selectors.push(token)
     end
   end
 
   # return
-  Selector.new(selectors.join(' '), filter)
+  Selector.new(selectors.join(' '), filters)
 end
 
 # parse node element

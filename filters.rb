@@ -15,6 +15,10 @@ module FilterFunctionInterface
   def child(doc)
     doc.children.length > 1
   end
+
+  def nokogiri?(doc)
+    doc.class == Nokogiri::XML::NodeSet
+  end
 end
 
 # TextFilter class
@@ -22,6 +26,7 @@ class TextFilter
   include FilterFunctionInterface
 
   def filter(doc)
+    return doc.to_s unless nokogiri?(doc)
     if valid(doc)
       doc.text
     else
@@ -35,6 +40,7 @@ class HrefFilter
   include FilterFunctionInterface
 
   def filter(doc)
+    return doc.to_s unless nokogiri?(doc)
     if valid(doc)
       doc.attribute('href').value
     else
@@ -61,6 +67,7 @@ class AttrFilter
   end
 
   def filter(doc)
+    return doc.to_s unless nokogiri?(doc)
     if valid(doc)
       doc.attribute(@key).value
     else
@@ -78,19 +85,25 @@ class ObjectFilter
   end
 end
 
+# TrimFilter
+class TrimFilter
+  include FilterFunctionInterface
+
+  def filter(doc)
+    doc = TextFilter.new.filter(doc) if nokogiri?(doc)
+    doc.strip!
+  end
+end
+
 def get_filter(token)
   filter =
     case token
-    when 'text{}'
-      TextFilter.new
-    when 'href{}'
-      HrefFilter.new
-    when 'html{}'
-      HtmlFilter.new
-    when /attr{(.*)}/
-      AttrFilter.new(Regexp.last_match[1])
-    else
-      raise UndefinedFilter
+    when 'text{}' then TextFilter.new
+    when 'href{}' then HrefFilter.new
+    when 'html{}' then HtmlFilter.new
+    when 'trim{}' then TrimFilter.new
+    when /attr{(.*)}/ then AttrFilter.new(Regexp.last_match[1])
+    else raise UndefinedFilter
     end
   filter
 end
