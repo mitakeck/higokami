@@ -1,0 +1,6 @@
+{
+  "[]item:`#main ol > li`": {
+    "title:`h3 a text{}`": "string",
+    "url:`div.hatena-asin-detail a href{}`": "string"
+  }
+}
