@@ -1,0 +1,8 @@
+{
+  "item[]:`li.s-result-item`": {
+    "title:`h2 text{}`": "string",
+    "star:`span span a span text{}`": "string",
+    "user:`div.a-span7 a.a-size-small text{}`": "string",
+    "url:`a.s-access-detail-page href{}`": "string"
+  }
+}
