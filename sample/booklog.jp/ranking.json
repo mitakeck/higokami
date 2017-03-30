@@ -1,0 +1,6 @@
+{
+  "item[]:`#mainArea > div.autopagerize_page_element.t20M > table tr`": {
+    "name:`td.desc h3 text{} trim{}`": "string",
+    "rating:`div.aggregate span.btnRating text{}`": "string"
+  }
+}
