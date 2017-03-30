@@ -5,7 +5,7 @@ module FilterFunctionInterface
   end
 
   def filter
-    raise NotIMplementedError
+    raise NotImplementedError
   end
 
   def valid(doc)
