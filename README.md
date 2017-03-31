@@ -31,4 +31,4 @@ puts higokami.parse('https://news.ycombinator.com/')
 }
 ```
 
-more sample is [here](https://github.com/mitakeck/higokami/tree/master/sample).
+more sample is [here](https://github.com/mitakeck/higokami-json).
