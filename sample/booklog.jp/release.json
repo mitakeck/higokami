@@ -1,6 +1,0 @@
-{
-  "item[]:`tr.accordion_content`": {
-    "name:`td.desc h3 a text{}`": "string",
-    "rating:`span.btnRating text{}`": "string"
-  }
-}
