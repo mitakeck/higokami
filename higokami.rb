@@ -1,9 +1,11 @@
+$LOAD_PATH.unshift(File.dirname(__FILE__))
+
 require 'json'
 require 'open-uri'
 require 'open_uri_redirections'
 require 'nokogiri'
 
-require './serializer.rb'
+require 'serializer.rb'
 
 # Higokami
 class Higokami
