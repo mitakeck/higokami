@@ -95,6 +95,22 @@ class TrimFilter
   end
 end
 
+# MatchFilter
+class MatchFilter
+  include FilterFunctionInterface
+
+  def initialize(pattern)
+    @pattern = pattern
+  end
+
+  def filter(doc)
+    doc = TextFilter.new.filter(doc) if nokogiri?(doc)
+    reuslt = doc.match(@pattern)
+    return reuslt[0] if count(reuslt) > 0
+    ''
+  end
+end
+
 def get_filter(token)
   filter =
     case token
@@ -103,6 +119,7 @@ def get_filter(token)
     when 'html{}' then HtmlFilter.new
     when 'trim{}' then TrimFilter.new
     when /attr{(.*)}/ then AttrFilter.new(Regexp.last_match[1])
+    when /match{(.*)}/ then MatchFilter.new(Regexp.last_match[1])
     else raise UndefinedFilter
     end
   filter
