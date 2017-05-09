@@ -105,8 +105,8 @@ class MatchFilter
 
   def filter(doc)
     doc = TextFilter.new.filter(doc) if nokogiri?(doc)
-    reuslt = doc.match(@pattern)
-    return reuslt[0] if count(reuslt) > 0
+    reuslt = doc.match(Regexp.new(@pattern))
+    return reuslt[0] unless reuslt.nil?
     ''
   end
 end
