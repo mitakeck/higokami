@@ -1,11 +1,10 @@
-$LOAD_PATH.unshift(File.dirname(__FILE__))
-
 require 'json'
 require 'open-uri'
 require 'open_uri_redirections'
 require 'nokogiri'
 
-require 'serializer.rb'
+require 'higokami/version'
+require 'higokami/serializer.rb'
 
 # Higokami
 class Higokami
@@ -17,7 +16,8 @@ class Higokami
   # parse
   def parse(url)
     @charset = nil
-    @html = open(url, 'User-Agent' => 'Higokami/0.0.1', allow_redirections: :safe) do |f|
+    @html = open(url, 'User-Agent' => 'Higokami/0.0.1',
+                      allow_redirections: :safe) do |f|
       @charset = f.charset
       f.read
     end
