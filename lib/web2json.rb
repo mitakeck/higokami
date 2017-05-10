@@ -1,13 +1,20 @@
-$LOAD_PATH.unshift(File.dirname(__FILE__))
-
 require 'json'
 require 'open-uri'
 require 'open_uri_redirections'
 require 'nokogiri'
 
-require 'serializer.rb'
+require 'web2json/version'
+require 'web2json/serializer.rb'
 
-# higokami
+# Web2json module
+module Web2json
+  def self.parse(conf, url)
+    higokami = Higokami.new(conf)
+    puts higokami.parse(url)
+  end
+end
+
+# Higokami
 class Higokami
   def initialize(file_name)
     @file = File.read(file_name)
@@ -17,7 +24,8 @@ class Higokami
   # parse
   def parse(url)
     @charset = nil
-    @html = open(url, 'User-Agent' => 'Higokami/0.0.1', allow_redirections: :safe) do |f|
+    @html = open(url, 'User-Agent' => 'Higokami/0.0.1',
+                      allow_redirections: :safe) do |f|
       @charset = f.charset
       f.read
     end

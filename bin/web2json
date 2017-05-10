@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'Web2json'
+
+puts Web2json
