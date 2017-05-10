@@ -6,14 +6,6 @@ require 'nokogiri'
 require 'higokami/version'
 require 'higokami/serializer.rb'
 
-# Higokami module
-module Higokami
-  def self.parse(conf, url)
-    higokami = Higokami.new(conf)
-    puts higokami.parse(url)
-  end
-end
-
 # Higokami
 class Higokami
   def initialize(file_name)

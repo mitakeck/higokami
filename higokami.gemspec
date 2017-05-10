@@ -6,7 +6,7 @@ require 'higokami/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'higokami'
-  spec.version       = Higokami::VERSION
+  spec.version       = '0.1.0'
   spec.authors       = ['mitakeck']
   spec.email         = ['mitake.ck@gmail.com']
   spec.summary       = 'higokami is nokogiri wrapper'
