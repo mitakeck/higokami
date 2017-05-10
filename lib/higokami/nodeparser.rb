@@ -1,4 +1,4 @@
-require 'web2json/filters.rb'
+require 'filters.rb'
 
 # convert return node value by key type
 def return_node(node, tkey, filters)
