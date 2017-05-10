@@ -2,15 +2,15 @@
 
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'web2json/version'
+require 'higokami/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'web2json'
-  spec.version       = web2json::VERSION
+  spec.name          = 'higokami'
+  spec.version       = Higokami::VERSION
   spec.authors       = ['mitakeck']
   spec.email         = ['mitake.ck@gmail.com']
-  spec.summary       = 'web2json is tiny cli  web scrape tool'
-  spec.description   = 'web2json is tiny cli  web scrape tool'
+  spec.summary       = 'higokami is nokogiri wrapper'
+  spec.description   = 'higokami is nokogiri wrapper'
   spec.homepage      = 'https://mitake.org'
 
   if spec.respond_to?(:metadata)
@@ -24,9 +24,7 @@ Gem::Specification.new do |spec|
     f.match(%r{^(test|spec|features)/})
   end
 
-  spec.bindir        = 'bin'
   spec.require_paths = ['lib']
-  spec.executables << 'web2json'
 
   spec.add_development_dependency 'bundler', '~> 1.14'
   spec.add_development_dependency 'rake', '~> 10.0'

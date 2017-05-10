@@ -3,7 +3,7 @@ require 'open_uri_redirections'
 require 'nokogiri'
 require 'json'
 
-require 'web2json/nodeparser.rb'
+require 'higokami/nodeparser.rb'
 
 Key = Struct.new(:key_org, :key, :is_array, :selector)
 

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    web2json (0.1.0)
+    higokami (0.1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -18,11 +18,11 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.14)
+  higokami!
   json (~> 2.0.2)
   nokogiri (~> 1.7.1)
   open_uri_redirections (~> 0.2.1)
   rake (~> 10.0)
-  web2json!
 
 BUNDLED WITH
    1.14.6

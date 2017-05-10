@@ -1,3 +1,3 @@
-module web2json
+module Higokami
   VERSION = '0.1.0'.freeze
 end

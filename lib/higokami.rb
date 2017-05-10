@@ -3,11 +3,11 @@ require 'open-uri'
 require 'open_uri_redirections'
 require 'nokogiri'
 
-require 'web2json/version'
-require 'web2json/serializer.rb'
+require 'higokami/version'
+require 'higokami/serializer.rb'
 
-# Web2json module
-module Web2json
+# Higokami module
+module Higokami
   def self.parse(conf, url)
     higokami = Higokami.new(conf)
     puts higokami.parse(url)
