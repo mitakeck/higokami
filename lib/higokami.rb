@@ -3,7 +3,6 @@ require 'open-uri'
 require 'open_uri_redirections'
 require 'nokogiri'
 
-require 'higokami/version'
 require 'higokami/serializer.rb'
 
 # Higokami
