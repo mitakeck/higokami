@@ -13,7 +13,7 @@ $ gem install higokami-0.1.0.gem
 Let's scrape Hacker News with Higokami
 
 ```ruby
-require './higokami.rb'
+require 'higokami'
 
 # parse hacker news
 higokami = Higokami.new('sample/news.ycombinator.com/index.json')
