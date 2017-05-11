@@ -1,6 +1,12 @@
 # Higokami
 Higokami : tinny html scraper depend on Nokogiri
 
+## Install
+
+```
+$ wget https://github.com/mitakeck/higokami/releases/download/v0.1.0/higokami-0.1.0.gem
+$ gem install higokami-0.1.0.gem
+```
 
 ## Usage
 
