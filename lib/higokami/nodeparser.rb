@@ -3,12 +3,18 @@ require 'higokami/filters.rb'
 # convert return node value by key type
 def return_node(node, tkey, filters)
   # return single value
-  return filters.reduce(node) { |value, filter| filter.filter(value) } unless tkey[:is_array]
+  unless tkey[:is_array]
+    return filters.reduce(node) do |value, filter|
+      filter.filter(value)
+    end
+  end
 
   # return array value
   result = []
   node.each do |n|
-    result.push(filters.reduce(n) { |value, filter| filter.filter(value) })
+    result.push(filters.reduce(n) do |value, filter|
+      filter.filter(value)
+    end)
   end
 
   # return
