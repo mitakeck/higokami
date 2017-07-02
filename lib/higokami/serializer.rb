@@ -28,6 +28,9 @@ end
 def get_value(struct, doc, tkey, value)
   case value.to_s
   when 'string' then parse_node(doc, tkey)
+  when 'integer' then parse_node(doc, tkey)
+  when 'double' then parse_mode(doc, tkey)
+  when 'float' then parse_node(doc, tkey)
   when /^{.*}$/ then
     # return norm value
     return serializer(struct[tkey[:key_org]], doc.css(tkey[:selector])) unless tkey[:is_array]
