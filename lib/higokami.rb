@@ -16,7 +16,7 @@ class Higokami
   # parse
   def parse(target)
     case target
-    when %r{/https?:\/\/.*/} then url(target)
+    when %r{^https?.*} then url(target)
     else file(target)
     end
   end
